@@ -1,0 +1,26 @@
+regression:
+    path: /regression
+    controller: App\Controller\RegressionController::regression
+    methods: [GET]
+
+    
+
+
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+
+axles_index:
+    path: /axles
+    controller: 'App\Controller\AxlesController::showAxles'
+
+create_axle:
+    path: /axles/create
+    controller: App\Controller\AxleController::createAxle
+    methods: [GET, POST]
+
+resarchedata_form:
+    path: '/Resarchedata'
+    controller: ResarcheDataController::ResarcheDataForm
+    methods: [GET, POST]
