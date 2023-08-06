@@ -21,6 +21,6 @@ create_axle:
     methods: [GET, POST]
 
 resarchedata_form:
-    path: '/Resarchedata'
-    controller: ResarcheDataController::ResarcheDataForm
+    path: '/ResarcheData'
+    controller: App\Controller\ResarcheDataController::ResarcheDataForm
     methods: [GET, POST]
