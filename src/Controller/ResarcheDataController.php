@@ -11,7 +11,7 @@ use App\Form\ResarcheDataType;
 class ResarcheDataController extends AbstractController
 {
     /**
-     * @Route("/resarchedata", name="resarchedata_form")
+     * @Route("/ResarcheData", name="ResarcheData_form")
      */
     public function resarcheDataForm(Request $request): Response
     {
@@ -25,7 +25,7 @@ class ResarcheDataController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->render('resarchedata.html.twig', [
+        return $this->render('ResarcheData.html.twig', [
             'form' => $form->createView(),
         ]);
     }

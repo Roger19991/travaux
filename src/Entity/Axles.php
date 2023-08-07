@@ -24,7 +24,7 @@ class Axles
 
     #[ORM\ManyToOne(inversedBy: 'axles')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Resarchedata $resarchedata = null;
+    private ?ResarcheData $resarchedata = null;
 
     public function getId(): ?int
     {
