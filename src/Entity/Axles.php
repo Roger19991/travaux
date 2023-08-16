@@ -2,10 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\AxlesRepository;
+use ORM\Column;
+use ORM\Entity;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\AxlesRepository;
 
-#[ORM\Entity(repositoryClass: AxlesRepository::class)]
+#[Entity(repositoryClass: AxlesRepository::class)]
 class Axles
 {
     #[ORM\Id]
@@ -19,12 +21,8 @@ class Axles
     #[ORM\Column(length: 255)]
     private ?string $description = null;
 
-    #[ORM\Column(length: 255)]
+    #[Column(length: 255)]
     private ?string $caracteristique = null;
-
-    #[ORM\ManyToOne(inversedBy: 'axles')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?ResarcheData $resarchedata = null;
 
     public function getId(): ?int
     {
@@ -63,18 +61,6 @@ class Axles
     public function setCaracteristique(string $caracteristique): static
     {
         $this->caracteristique = $caracteristique;
-
-        return $this;
-    }
-
-    public function getResarchedata(): ?Resarchedata
-    {
-        return $this->resarchedata;
-    }
-
-    public function setResarchedata(?Resarchedata $resarchedata): static
-    {
-        $this->resarchedata = $resarchedata;
 
         return $this;
     }

@@ -15,8 +15,12 @@
         {{ form_row(form.designation) }}
         {{ form_row(form.description) }}
         {{ form_row(form.caracteristique) }}
-        {{ form_row(form.resarchedata) }}
         <button type="submit">Créer</button>
     {{ form_end(form) }}
+
+    {% if app.request.method == 'POST' %}
+
+        
+    {% endif %}
 </div>
 {% endblock %}

@@ -12,9 +12,9 @@
      {
          $builder
              ->add('designation')
-             ->add('dateCreation')
-             ->add('dateModification')
-             ->add('trafic')
+             ->add('creation_date')
+             ->add('modification_date')
+             ->add('trafic_statistique')
              ->add('startPeriode')
              ->add('endPeriode')
          ;

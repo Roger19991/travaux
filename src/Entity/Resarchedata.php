@@ -2,19 +2,19 @@
 
 namespace App\Entity;
 
-use App\Repository\ResarcheDataRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ResarcheDataRepository;
+
 
 #[ORM\Entity(repositoryClass: ResarcheDataRepository::class)]
 class ResarcheData
 {
     #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column]
-    private ?int $id = null;
+#[ORM\GeneratedValue]
+#[ORM\Column]
+private ?int $id = null;
+
 
     #[ORM\Column(length: 255)]
     private ?string $designation = null;
@@ -28,19 +28,11 @@ class ResarcheData
     #[ORM\Column]
     private ?float $trafic_statistique = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $start_periode = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $end_periode = null;
-
-    #[ORM\OneToMany(mappedBy: 'resarchedata', targetEntity: axles::class, orphanRemoval: true)]
-    private Collection $axles;
-
-    public function __construct()
-    {
-        $this->axles = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
@@ -115,36 +107,6 @@ class ResarcheData
     public function setEndPeriode(\DateTimeInterface $end_periode): static
     {
         $this->end_periode = $end_periode;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, axles>
-     */
-    public function getAxles(): Collection
-    {
-        return $this->axles;
-    }
-
-    public function addAxle(axles $axle): static
-    {
-        if (!$this->axles->contains($axle)) {
-            $this->axles->add($axle);
-            $axle->setResarchedata($this);
-        }
-
-        return $this;
-    }
-
-    public function removeAxle(axles $axle): static
-    {
-        if ($this->axles->removeElement($axle)) {
-            // set the owning side to null (unless already changed)
-            if ($axle->getResarchedata() === $this) {
-                $axle->setResarchedata(null);
-            }
-        }
 
         return $this;
     }

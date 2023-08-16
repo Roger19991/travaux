@@ -16,7 +16,7 @@ axles_index:
     controller: 'App\Controller\AxlesController::showAxles'
 
 create_axle:
-    path: /axles/create
+    path: /
     controller: App\Controller\AxleController::createAxle
     methods: [GET, POST]
 

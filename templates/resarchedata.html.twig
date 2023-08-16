@@ -13,11 +13,12 @@
 
 {{ form_start(form) }}
     {{ form_row(form.designation) }}
-    {{ form_row(form.dateCreation) }}
-    {{ form_row(form.dateModification) }}
-    {{ form_row(form.trafic) }}
+    {{ form_row(form.creation_date) }}
+    {{ form_row(form.modification_date) }}
+    {{ form_row(form.trafic_statistique) }}
     {{ form_row(form.startPeriode) }}
     {{ form_row(form.endPeriode) }}
+     <button type="submit">Soumettre</button>
 {{ form_end(form) }}
 </div>
 {% endblock %}
