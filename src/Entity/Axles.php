@@ -2,12 +2,10 @@
 
 namespace App\Entity;
 
-use ORM\Column;
-use ORM\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\AxlesRepository;
 
-#[Entity(repositoryClass: AxlesRepository::class)]
+#[ORM\Entity(repositoryClass: AxlesRepository::class)]
 class Axles
 {
     #[ORM\Id]
@@ -21,7 +19,7 @@ class Axles
     #[ORM\Column(length: 255)]
     private ?string $description = null;
 
-    #[Column(length: 255)]
+    #[ORM\Column(length: 255)]
     private ?string $caracteristique = null;
 
     public function getId(): ?int

@@ -18,6 +18,10 @@
     </ul>
     
     {% for axle in axles %}
+    {{ axle.id }}
+    {{ axle.designation }}
+    {{ axle.description }}
+    {{ axle.caracteristique }}
         <p>{{ axle }}</p>
     {% endfor %}
 </div>

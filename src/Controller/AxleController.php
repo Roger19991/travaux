@@ -27,7 +27,7 @@ class AxleController extends AbstractController
             $entityManager->persist($axle);
             $entityManager->flush();
 
-            return $this->redirectToRoute('/ResarcheData');
+            return $this->redirectToRoute('resarchedata_form');
         }
 
         return $this->render('axles/create.html.twig', [

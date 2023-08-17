@@ -24,3 +24,8 @@ resarchedata_form:
     path: '/ResarcheData'
     controller: App\Controller\ResarcheDataController::ResarcheDataForm
     methods: [GET, POST]
+
+app_axles_show:
+    path: /axles/show
+    controller: App\Controller\AxleController::showAxles
+    methods: [GET, POST]
