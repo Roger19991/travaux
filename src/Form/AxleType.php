@@ -12,7 +12,7 @@ class AxleType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('designation')
+            ->add('designation',)
             ->add('description')
             ->add('caracteristique');
     }

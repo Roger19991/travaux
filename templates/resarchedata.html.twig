@@ -8,16 +8,49 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
+<style>
+    .form-group {
+        margin-bottom: 0.2cm;
+    }
+    
+    .form-control {
+        background-color: blue;
+        margin-top: 0.2cm;
+    }
+</style>
+
 <div class="example-wrapper">
     <h1>Formulaire ResarcheData</h1>
 
-{{ form_start(form) }}
-    {{ form_row(form.designation) }}
-    {{ form_row(form.creation_date) }}
-    {{ form_row(form.modification_date) }}
-    {{ form_row(form.trafic_statistique) }}
-    {{ form_row(form.startPeriode) }}
-    {{ form_row(form.endPeriode) }}
+    {{ form_start(form) }}
+    <div class="form-group">
+        {{ form_label(form.designation) }}
+        {{ form_widget(form.designation, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.creation_date) }}
+        {{ form_widget(form.creation_date, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.modification_date) }}
+        {{ form_widget(form.modification_date, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.trafic_statistique) }}
+        {{ form_widget(form.trafic_statistique, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.startPeriode) }}
+        {{ form_widget(form.startPeriode, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.endPeriode) }}
+        {{ form_widget(form.endPeriode, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <button type="submit">Soumettre</button>
+    {{ form_end(form) }}
+</div>
+
      <button type="submit">Soumettre</button>
 {{ form_end(form) }}
 </div>

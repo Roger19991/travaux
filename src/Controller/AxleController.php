@@ -11,10 +11,7 @@ use App\Form\AxleType;
 use Doctrine\ORM\Mapping as ORM;
 
 class AxleController extends AbstractController
-/**
- * @Route("/axles/create", name="axles/creates")
- * @Method("POST")
- */
+
 {
     public function createAxle(Request $request): Response
     {
