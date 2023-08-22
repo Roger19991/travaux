@@ -34,7 +34,7 @@ class ResarcheDataController extends AbstractController
             $entityManager->persist($resarchedata);
             $entityManager->flush();
             
-            return $this->redirectToRoute('/Regression'); 
+            return $this->redirectToRoute('Regression'); 
         }
 
         return $this->render('ResarcheData.html.twig', [
